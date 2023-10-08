@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.getElementById('toggleButton');
+  const extensionStateTextElement =
+    document.getElementById('extensionStateText');
 
   chrome.storage.local.get(['isActive'], (result) => {
     toggleButton.innerText = result.isActive ? 'Disable' : 'Enable';
+    extensionStateTextElement.innerText = result.isActive
+      ? ' Enabled'
+      : ' Disabled';
   });
 
   toggleButton.addEventListener('click', () => {
