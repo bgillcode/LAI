@@ -1,10 +1,10 @@
 const setExtensionIcon = (isActive) => {
   const iconPath = isActive
     ? {
-        128: 'icons/lai_active.png',
+        128: '../icons/lai_active.png',
       }
     : {
-        128: 'icons/lai_inactive.png',
+        128: '../icons/lai_inactive.png',
       };
 
   chrome.action.setIcon({ path: iconPath });
